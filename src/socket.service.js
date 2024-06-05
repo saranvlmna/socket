@@ -5,17 +5,14 @@ module.exports = async (server) => {
         origin: "*",
       },
     });
+
     let activeUsers = [];
     io.on("connection", (socket) => {
-      console.log("a user connected", socket.id);
       socket.on("disconnect_user", (msg) => {
-        console.log("user disconnected", socket.id);
-        if (activeUsers.includes(msg.userName)) {
-   
-        }
-        io.emit("activeUsers", {
-          data: activeUsers,
-        });
+        if (activeUsers.includes())
+          io.emit("activeUsers", {
+            data: activeUsers,
+          });
       });
 
       socket.on("sendMessage", (msg) => {
