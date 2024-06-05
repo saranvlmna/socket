@@ -1,6 +1,6 @@
 const express = require("express");
 const { createServer } = require("node:http");
-const socketService = require("./socket.service");
+const socketService = require("./src/socket.service");
 const port = 7001;
 var app = express();
 
