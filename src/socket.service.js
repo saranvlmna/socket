@@ -31,6 +31,10 @@ module.exports = async (server) => {
           data: activeUsers,
         });
       });
+
+      socket.on("typing", (msg) => {
+        io.emit("typingResponse", msg);
+      });
     });
   } catch (error) {
     console.log(error);
