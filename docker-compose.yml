@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  socket-api:
+    build: 
+      dockerfile: ./Dockerfile
+    expose: 
+      - "3000"
+    ports:
+      - "18000:3000"
+    networks:
+      nginx:
+        aliases:
+          - socket
+networks:
+  nginx: 
+    external: true
