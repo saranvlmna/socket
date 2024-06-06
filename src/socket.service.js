@@ -9,10 +9,10 @@ module.exports = async (server) => {
     let activeUsers = [];
     io.on("connection", (socket) => {
       socket.on("disconnect_user", (msg) => {
-        if (activeUsers.includes())
-          io.emit("activeUsers", {
-            data: activeUsers,
-          });
+        // activeUsers.pop(msg.userName);
+        io.emit("activeUsers", {
+          data: activeUsers,
+        });
       });
 
       socket.on("sendMessage", (msg) => {
